@@ -12,9 +12,9 @@ let id = 0;
 function agregarTareas (tarea, id){
     const elementoTarea =  `<div id="tarea" class=block-tarea-${id}>
                                 <p class="id-tarea">${id}</p>
-                                <p class="tarea-${id}" ${tachado}">${tarea}</p>
+                                <p class="tarea-${id}">${tarea}</p>
                                 <div>
-                                    <i class="far ${terminado}" data="realizada" id="${id}"></i>
+                                    <i class="far fa-circle" data="realizada" id="${id}"></i>
                                     <i class="fas fa-trash de" data="eliminada" id="${id}"></i>
                                 </div>
                             </div>`
@@ -37,6 +37,7 @@ botonAgregarTareas.addEventListener("click", ()=>{
     inputTarea.value = "";
 });
 
+
 listaTarea.addEventListener("click", function(e){
     const element = e.target;
     const elementData = element.attributes.data.value;
@@ -47,6 +48,7 @@ listaTarea.addEventListener("click", function(e){
         eliminarTarea(elementId);
     }
 })
+
 
 function tacharTarea(element, elementId){
     element.classList.toggle(check);
