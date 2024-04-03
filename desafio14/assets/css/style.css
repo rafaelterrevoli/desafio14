@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.contenedor {
+    width: 700px;
+    min-height: 500px;
+    padding: 40px;
+    border: 3px solid #2626a5;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #2626a5;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #2626a5;
+    border-radius: 10px;
+    color: #2626a5;
+}
+button {
+    width: 180px;
+    background-color: #2626a5;
+    color: white;
+    padding: 10px 10px;
+    font-size: 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+.agregar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.totales {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0; 
+    width: 80%;
+    color: #2626a5;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0; 
+    width: 90%;
+    color: #2626a5;
+}
+
+.lista-tareas{
+    width: 95%;
+    margin-top: 10px;
+}
+
+#tarea{
+    width: 100%;
+    font-size: 18px;
+    padding: 5px;
+    padding-left: 15px;
+    color: #2626a5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(215, 233, 246);
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+#tarea i:hover {
+    color: #45a049;
+    cursor: pointer;
+}
+
+.tarea-realizada {
+    text-decoration: line-through;
+    color: grey;
+}
+
+
+
+i {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
