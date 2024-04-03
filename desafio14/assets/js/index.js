@@ -9,9 +9,7 @@ const lineaTachar = "tarea-realizada";
 const arrayTareas = [];
 let id = 0;
 
-function agregarTareas (tarea, id, realizada){
-    const terminado = realizada ? check : uncheck;
-    const tachado = realizada ? lineaTachar : "";
+function agregarTareas (tarea, id){
     const elementoTarea =  `<div id="tarea" class=block-tarea-${id}>
                                 <p class="id-tarea">${id}</p>
                                 <p class="tarea-${id}" ${tachado}">${tarea}</p>
@@ -20,7 +18,6 @@ function agregarTareas (tarea, id, realizada){
                                     <i class="fas fa-trash de" data="eliminada" id="${id}"></i>
                                 </div>
                             </div>`
-
     listaTarea.insertAdjacentHTML("beforeend",elementoTarea);
 }
 
@@ -34,12 +31,11 @@ botonAgregarTareas.addEventListener("click", ()=>{
             realizada: false,
             eliminada: false
         });
-        agregarTareas(tarea, id, false, false);
+        agregarTareas(tarea, id);
         calcularResulatados(arrayTareas); 
     }
     inputTarea.value = "";
 });
-
 
 listaTarea.addEventListener("click", function(e){
     const element = e.target;
@@ -51,7 +47,6 @@ listaTarea.addEventListener("click", function(e){
         eliminarTarea(elementId);
     }
 })
-
 
 function tacharTarea(element, elementId){
     element.classList.toggle(check);
@@ -77,16 +72,12 @@ function eliminarTarea(elementId){
     calcularResulatados(arrayTareas);
 }
 
-
 function calcularResulatados(arrayTareas){
     const arrayCantidad = arrayTareas.filter(function (obj) { return obj.eliminada === false; });
     const arrayCompletadas = arrayCantidad.filter(function (obj) { return obj.realizada === true; });
     const arrayPorHacer = arrayCantidad.filter(function (obj) { return obj.realizada === false; });  
-    const cantidad = arrayCantidad.length
-    const completadas = arrayCompletadas.length;
-    const porHacer = arrayPorHacer.length;
-    const htmlTotales = `<p>Total: ${cantidad}</p>
-                   <p>Realizadas: ${completadas}</p>
-                   <p>Por hacer: ${porHacer}</p>`
+    const htmlTotales = `<p>Total: ${arrayCantidad.length}</p>
+                         <p>Realizadas: ${arrayCompletadas.length}</p>
+                         <p>Por hacer: ${arrayPorHacer.length}</p>`
     totales.innerHTML = htmlTotales;
 }
